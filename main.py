@@ -1,16 +1,30 @@
-# This is a sample Python script.
+import numpy as np
+import pandas as pd
+import seaborn as sns
+import matplotlib.pyplot as plt
+train_data = pd.read_csv("train.csv")
+#print(train_data)
+test_data = pd.read_csv("test.csv")
 
-# Press ⌃R to execute it or replace it with your code.
-# Press Double ⇧ to search everywhere for classes, files, tool windows, actions, and settings.
+y = train_data["Survived"]
+#sns.heatmap(train_data.isnull(),yticklabels=False,cbar=False,cmap='viridis')
+#plt.show()
+#sns.countplot(x="Survived",data=train_data)
+#plt.show()
+class1 = 38
+class2 = 30
+class3 = 25
 
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press ⌘F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+def age_correction(input):
+    Age= input[0]
+    Class = input[1]
+    if pd.isnull(Age):
+        if Class == 1:
+            return 38
+        elif Class == 2:
+            return 30
+        elif Class == 3:
+            return 25
+    else:
+       return Age
+train_data["Age"] = train_data[["Age", "Pclass"]].apply(age_correction, axis=1)
