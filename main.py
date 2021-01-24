@@ -1,8 +1,6 @@
-import numpy as np
 import pandas as pd
-import seaborn as sns
-import matplotlib.pyplot as plt
-import sklearn
+#import seaborn as sns
+#import matplotlib.pyplot as plt
 train_data = pd.read_csv("train.csv")
 #print(train_data)
 test_data = pd.read_csv("test.csv")
@@ -86,3 +84,4 @@ X = test_data
 result = lr.predict(X)
 result = pd.DataFrame(result,index=range(892, 1310),columns=['Survived'])
 result.index.names = ['PassengerId']
+result.to_csv('./result.csv')
