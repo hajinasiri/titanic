@@ -6,5 +6,5 @@ Cabin, name, ticket and passengerId columns were droped.
 sex column and Pclass columns were categorized.
 Compared a few algorithms inlcluding Random Forest and logistic regression.
 Logistic regression showed a better performance 
-After submitting the result to Kaggle my score was 0.7606
+After submitting the result to Kaggle my score was 0.76076
 It obviously needs more work to reach higher accuracy and will be revisited later
