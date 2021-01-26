@@ -32,6 +32,8 @@ train_data = pd.read_csv("train.csv")
 #plt.show()
 #sns.countplot(x="Survived",data=train_data)
 #plt.show()
+
+
 class1 = 38
 class2 = 30
 class3 = 25
